@@ -1,12 +1,18 @@
 # GPU Usage Privacy Policy
 
-Effective October 9, 2026. This policy covers GPU Usage for Mac and iPhone, the GPU Usage VS Code extension, and the GPU Usage CLI.
+Effective October 9, 2026. This policy covers GPU Usage for Mac, iPhone, iPad and Apple Watch, the GPU Usage VS Code extension, and the GPU Usage CLI.
 
 ## Your servers and readings
 
-GPU Usage connects directly to SSH servers you select. It reads NVIDIA GPU usage and, when you enable job monitoring, process identifiers, names and start identities. The app does not install a service on the server, change your jobs, or send those readings to a developer-operated backend.
+GPU Usage connects directly to SSH servers you select. It reads NVIDIA GPU usage or whole-device Apple GPU utilization and driver memory allocation and, when you enable job monitoring, process identifiers, names and start identities. The app does not install a service on the server, change your jobs, or send those readings to a developer-operated backend.
 
 The Mac app discovers explicit entries in your SSH configuration. You can disable or delete a server in Settings. Deleting a server removes its synced connection and watches; it does not change your SSH configuration or remote files. Removing a server also requests deletion of its app-managed Keychain credential when no other connection uses it. Credentials managed separately by your SSH configuration remain yours.
+
+The local Mac is discovered automatically and queried locally. For Apple GPU monitoring, process selection lists the connected user's processes; it does not attribute GPU use to a specific process.
+
+## Apple Watch
+
+The paired iPhone sends recent GPU readings, server display names, selected job names and monitoring status to the Watch using Apple WatchConnectivity. SSH addresses, passwords and keys are not sent to the Watch. The latest snapshot is cached on the Watch for offline viewing, with stale readings marked. The Watch does not contact GPU servers or a developer-operated backend.
 
 ## iCloud and Keychain
 
@@ -16,7 +22,7 @@ Settings are also stored locally. On Mac the settings file and current snapshot 
 
 ## Notifications and purchases
 
-Notifications are created on the device from successful observations. There is no developer-operated push relay. iOS determines when background checks are allowed. Notification text may include the server name and selected process name; control lock-screen previews in system settings.
+Notifications are created on the device from successful observations. There is no developer-operated push relay. iOS/iPadOS determine when background checks are allowed. Notification mirroring to the Watch follows Apple's device and notification settings. Notification text may include the server name and selected process name; control lock-screen previews in system settings.
 
 Apple processes subscriptions and payment details. GPU Usage receives a signed transaction proof to check access to Pro features; payment card details are not provided to the app. The proof is synchronized to your other devices through your private iCloud database.
 
