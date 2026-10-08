@@ -14,9 +14,13 @@ The local Mac is discovered automatically and queried locally. For Apple GPU mon
 
 The paired iPhone sends recent GPU readings, server display names, selected job names and monitoring status to the Watch using Apple WatchConnectivity. SSH addresses, passwords and keys are not sent to the Watch. The latest snapshot is cached on the Watch for offline viewing, with stale readings marked. The Watch does not contact GPU servers or a developer-operated backend.
 
+Home Screen widgets and Watch complications read a local snapshot shared with their app through an Apple App Group. This cache contains readings and display names, not SSH credentials. Widget contents are marked as privacy-sensitive and follow operating-system privacy controls.
+
 ## iCloud and Keychain
 
 Connections, trusted host keys, monitoring preferences, selected process watches and an Apple-signed subscription proof are stored in your private CloudKit database using encrypted record fields. The first host key is stored automatically and later key changes require confirmation. SSH passwords and supported private keys use Apple's synchronizable Keychain. iCloud and Keychain synchronization are provided by Apple under your Apple Account. GPU Usage does not run a separate account, credential store, or synchronization server.
+
+Settings also retain up to 100 recent process-end detections, including the server display name, chosen job name, process identifier and observation time. This history remains after a watch is removed and follows the same private encrypted settings synchronization.
 
 Settings are also stored locally. On Mac the settings file and current snapshot have owner-only file permissions. The VS Code extension reads local settings and snapshots; it does not read SSH credentials. Configuration recovery copies may remain on the device after a damaged file or iCloud account change. They contain settings, not private keys or passwords.
 
@@ -29,6 +33,8 @@ Apple processes subscriptions and payment details. GPU Usage receives a signed t
 ## Analytics and controls
 
 GPU Usage includes no advertising SDK or third-party analytics SDK and does not track you across other apps. Apple may provide app diagnostics or purchase reports according to your Apple settings and its policies. GitHub hosts the Mac and VS Code downloads and applies its own privacy policy to visits and downloads.
+
+The Mac app uses Sparkle to check a GitHub-hosted update feed and download signed releases. It does not enable Sparkle system-profile reporting. You can disable automatic update checks in the Mac app's settings.
 
 You can remove connected servers in the app, revoke SSH credentials at the server, disable notifications in system settings, cancel the subscription in your Apple account settings, and manage iCloud/Keychain data using Apple's account controls. Deleting the app from one device does not by itself remove data stored in iCloud or on your other devices.
 

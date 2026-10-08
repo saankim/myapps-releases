@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>GPU Usage</title>
+        <item>
+            <title>2.2.0</title>
+            <pubDate>Fri, 09 Oct 2026 05:27:47 +0900</pubDate>
+            <link>https://github.com/saankim/myapps-releases/blob/main/gpu-usage/README.md</link>
+            <sparkle:version>48</sparkle:version>
+            <sparkle:shortVersionString>2.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h2>GPU Usage 2.2.0</h2>
+<ul><li>빈 GPU 알림: 지속 시간, 재알림 간격, 한 번만 알림</li><li>연결 오류 설명과 재시도, 감시 작업 이름과 최근 종료 기록</li><li>서버 즐겨찾기와 대표 연결로 묶기</li><li>Mac 앱 안에서 서명된 업데이트 확인과 설치</li></ul>
+<p>기존의 간결한 GPU 목록을 유지합니다. iPhone·iPad 위젯과 Watch 컴플리케이션은 TestFlight 앱에 포함됩니다.</p>
+<p>베타 제한: 운영용 iCloud 설정 배포가 남아 있어 기기 간 설정 동기화와 iPhone에서 구입한 Pro의 Mac 활성화는 아직 사용할 수 없습니다.</p>
+]]></description>
+            <enclosure url="https://github.com/saankim/myapps-releases/releases/download/gpu-usage-v2.2.0/GPUUsage-Mac-2.2.0.zip" length="5569597" type="application/octet-stream" sparkle:edSignature="NAYkFVdtp1kz+D19iR9hnxrFvUhj9+M4+FS+HSUtCN87lV6/vUxllYJoB0ssWpQ+do6gLJL9IhD7GQVu0ZzQAw=="/>
+        </item>
+    </channel>
+</rss>
