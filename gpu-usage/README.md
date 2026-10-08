@@ -4,13 +4,13 @@ Your GPUs, everywhere. A small utility for researchers and developers, with nati
 
 **Beta limitation:** Production iCloud setup is pending. Cross-device settings sync and iPhone-to-Mac Pro activation do not work yet. Manual server registration and viewing work independently on each device.
 
-[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.2.0) · [Privacy](PRIVACY.md)
+[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.2.1) · [Privacy](PRIVACY.md)
 
 ## Install
 
 **Mac:** Requires an Apple silicon Mac running macOS 26 or later. Unzip the release and move **GPU Usage.app** to **Applications**. Open it and use the menu-bar CPU icon. The app is signed with Developer ID and notarized by Apple.
 
-Starting with 2.2.0, open Settings → **This Mac (이 Mac)** → **Check for Updates (업데이트 확인)** to install updates inside the app. Automatic checks can be turned off there; installation requires your action. Updates are verified with Developer ID and Sparkle signatures. Users on 2.1.2 or earlier need to install 2.2.0 manually once.
+Starting with 2.2.0, open Settings → **This Mac (이 Mac)** → **Check for Updates (업데이트 확인)** to install updates inside the app. Automatic checks can be turned off there; installation requires your action. Updates are verified with Developer ID and Sparkle signatures. Users on 2.1.2 or earlier need to install the current release manually once.
 
 **iPhone / iPad:** Requires iOS or iPadOS 26 or later. The current version is an internal TestFlight beta; an invited Apple account is required. The public App Store listing is not yet available.
 
@@ -30,7 +30,7 @@ If `~/.local/bin` is not on your PATH, use the full path or add it to your shell
 
 ## Connect
 
-Register a server in Settings using an SSH address, username and key or password. Mac SSH `Host` entries appear automatically, including included configuration files; wildcard entries and proxy/jump connections are excluded. iPhone and iPad support unencrypted OpenSSH Ed25519 keys and SSH passwords. Each device still needs a network route to the server.
+Open Settings → **Server Management (서버 관리)** → **Add Server (서버 추가)**, then enter an SSH address, username and key or password. Mac SSH `Host` entries appear automatically, including included configuration files; wildcard entries and proxy/jump connections are excluded. iPhone and iPad support unencrypted OpenSSH Ed25519 keys and SSH passwords. Each device still needs a network route to the server.
 
 The first server key is remembered automatically, so the initial connection has no fingerprint confirmation step. If the key changes later, monitoring stops and the app shows a fingerprint warning. Confirm the replacement using the existing server trust dialog to reconnect. Existing trusted keys are preserved. SSH remains encrypted and requires user authentication; the app does not modify your SSH configuration or known-hosts files. Automatic first-use trust cannot detect an impersonated server on that very first connection.
 
@@ -52,17 +52,17 @@ Use the server filter at the top of the dashboard (or in Settings) to choose whi
 
 The awake Mac polls at your chosen interval while its menu-bar app runs. iPhone and iPad poll while visible; background refresh happens only when the operating system permits it. Apple Watch displays the latest phone snapshot and marks old results for rechecking. Background timing and notifications are not guaranteed. Job completion means the selected process disappeared, not that it succeeded.
 
-Availability alerts wait for repeated successful readings over a configurable duration (30 seconds by default). A failed query or a long observation gap restarts that duration. After an alert, another alert requires a busy-to-available transition and the configured cooldown (10 minutes by default). **Notify once** turns availability alerts off after the next notification is scheduled; enabling them again starts a fresh observation period.
+In Settings → **Available GPU Alerts (빈 GPU 알림)**, turn alerts on to reveal their conditions. Availability alerts wait for repeated successful readings over a configurable duration (30 seconds by default). A failed query or a long observation gap restarts that duration. After an alert, another alert requires a busy-to-available transition and the configured cooldown (10 minutes by default). **Notify once** turns availability alerts off after the next notification is scheduled; enabling them again starts a fresh observation period.
 
-Give watched processes a recognizable name, such as an experiment name. The latest 100 process-end detections remain in job history after a watch is removed. Timestamps show when disappearance was observed, not the exact exit time or a successful result.
+Expand **Add from Running Tasks (실행 중인 작업에서 추가)** beside the server to find a process by name or PID. Give watched processes a recognizable name, such as an experiment name. Use the task’s More menu to rename or stop watching it; the five most recent history entries stay visible, with older entries expandable. The latest 100 process-end detections remain in job history after a watch is removed. Timestamps show when disappearance was observed, not the exact exit time or a successful result.
 
-Star servers to show them first. In Settings, group multiple connections to the same server under a representative connection, using a suggested match or **Group connections (연결 직접 묶기)**. Grouping changes presentation and avoids duplicate availability alerts; it preserves the original connections and process watches. Separate them again at any time. The VS Code dashboard uses the same ordering and groups.
+Star servers to show them first, using the star in the iPhone/iPad server detail or the server’s More menu in **Server Management (서버 관리)**. Choose **Representative Connection (대표 연결 선택)** in that menu to group connections. A single selection sheet shows matching suggestions; changes apply when you save. Grouping changes presentation and avoids duplicate availability alerts; it preserves the original connections and process watches. Separate them again at any time. The VS Code dashboard uses the same ordering and groups.
 
 Connection failures show a short explanation, retry and server-settings actions, and expandable diagnostic details. Previously collected readings remain visibly stale until a successful refresh.
 
 ## Widgets and complications
 
-On iPhone or iPad, add **GPU Usage** from the Home Screen widget gallery after opening the app once. Small and medium widgets show GPU availability and the last observation time; accessory widgets are also available. On Apple Watch, add the GPU Usage circular, rectangular or inline complication to a compatible watch face after opening both companion apps.
+On iPhone or iPad, add **GPU Usage** from the Home Screen widget gallery after opening the app once. Small and medium widgets show GPU availability, how many GPUs have current readings, and the last observation time (including the date for older readings); accessory widgets are also available. On Apple Watch, add the GPU Usage circular, rectangular or inline complication to a compatible watch face after opening both companion apps.
 
 Widgets and complications use the latest device snapshot, without making SSH connections themselves. They follow the app's server selection and mark expired readings for rechecking instead of showing them as currently available. Tap to open the app and request fresh data. Widget and complication refresh timing is controlled by the operating system.
 
