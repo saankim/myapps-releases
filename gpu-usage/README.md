@@ -4,7 +4,7 @@ Your GPUs, everywhere. A small utility for researchers and developers, with nati
 
 **Beta limitation:** Production iCloud setup is pending. Cross-device settings sync and iPhone-to-Mac Pro activation do not work yet. Manual server registration and viewing work independently on each device.
 
-[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.1.1) · [Privacy](PRIVACY.md)
+[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.1.2) · [Privacy](PRIVACY.md)
 
 ## Install
 
@@ -28,7 +28,9 @@ If `~/.local/bin` is not on your PATH, use the full path or add it to your shell
 
 ## Connect
 
-Register a server in Settings using an SSH address, username and key or password. Mac SSH `Host` entries appear automatically, including included configuration files; wildcard entries and proxy/jump connections are excluded. iPhone and iPad support unencrypted OpenSSH Ed25519 keys and SSH passwords. Confirm the server fingerprint against a trusted existing connection. Each device still needs a network route to the server.
+Register a server in Settings using an SSH address, username and key or password. Mac SSH `Host` entries appear automatically, including included configuration files; wildcard entries and proxy/jump connections are excluded. iPhone and iPad support unencrypted OpenSSH Ed25519 keys and SSH passwords. Each device still needs a network route to the server.
+
+The first server key is remembered automatically, so the initial connection has no fingerprint confirmation step. If the key changes later, monitoring stops and the app shows a fingerprint warning. Confirm the replacement using the existing server trust dialog to reconnect. Existing trusted keys are preserved. SSH remains encrypted and requires user authentication; the app does not modify your SSH configuration or known-hosts files. Automatic first-use trust cannot detect an impersonated server on that very first connection.
 
 Settings sync uses the same iCloud account and iCloud Keychain. There is no QR setup, required Mac setup step on iPhone, remote helper, or push relay. Current beta deployment limitations are listed in the release notes.
 

@@ -16,7 +16,7 @@ The paired iPhone sends recent GPU readings, server display names, selected job 
 
 ## iCloud and Keychain
 
-Connections, trusted host keys, monitoring preferences, selected process watches and an Apple-signed subscription proof are stored in your private CloudKit database using encrypted record fields. SSH passwords and supported private keys use Apple's synchronizable Keychain. iCloud and Keychain synchronization are provided by Apple under your Apple Account. GPU Usage does not run a separate account, credential store, or synchronization server.
+Connections, trusted host keys, monitoring preferences, selected process watches and an Apple-signed subscription proof are stored in your private CloudKit database using encrypted record fields. The first host key is stored automatically and later key changes require confirmation. SSH passwords and supported private keys use Apple's synchronizable Keychain. iCloud and Keychain synchronization are provided by Apple under your Apple Account. GPU Usage does not run a separate account, credential store, or synchronization server.
 
 Settings are also stored locally. On Mac the settings file and current snapshot have owner-only file permissions. The VS Code extension reads local settings and snapshots; it does not read SSH credentials. Configuration recovery copies may remain on the device after a damaged file or iCloud account change. They contain settings, not private keys or passwords.
 
