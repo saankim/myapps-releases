@@ -4,13 +4,13 @@
         <title>GPU Usage</title>
         <item>
             <title>2.2.1</title>
-            <pubDate>Fri, 09 Oct 2026 06:03:06 +0900</pubDate>
+            <pubDate>Fri, 09 Oct 2026 06:25:06 +0900</pubDate>
             <link>https://github.com/saankim/myapps-releases/blob/main/gpu-usage/README.md</link>
-            <sparkle:version>49</sparkle:version>
+            <sparkle:version>50</sparkle:version>
             <sparkle:shortVersionString>2.2.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>GPU Usage 2.2.1</h2><ul><li>기존 대시보드 스타일을 유지한 설정과 작업 감시 흐름 개선</li><li>서버 상세의 즐겨찾기, 더 보기 메뉴와 대표 연결 선택</li><li>필요한 조건만 보여주는 빈 GPU 알림 설정</li><li>큰 글자에 맞는 오류 복구 버튼과 작업 검색·종료 기록</li><li>Mac 설정에서 마지막으로 사용한 탭 복원</li></ul><p>베타 제한: 운영용 iCloud 설정 배포가 남아 있어 기기 간 설정 동기화와 iPhone 구독의 Mac 활성화는 아직 사용할 수 없습니다.</p>]]></description>
-            <enclosure url="https://github.com/saankim/myapps-releases/releases/download/gpu-usage-v2.2.1/GPUUsage-Mac-2.2.1.zip" length="5642524" type="application/octet-stream" sparkle:edSignature="Wz63Zphxe5W4zWti/2csxuVMi4uvzhj9qwYavc9daK+Gd3fqDPYecUb2ukfjO6YouBVnb94vCuwo88sCqJIXBA=="/>
+            <description><![CDATA[<h2>GPU Usage 2.2.1</h2><ul><li>기존 대시보드 스타일을 유지한 설정과 작업 감시 흐름 개선</li><li>서버 상세의 즐겨찾기, 더 보기 메뉴와 대표 연결 선택</li><li>필요한 조건만 보여주는 빈 GPU 알림 설정</li><li>큰 글자에 맞는 오류 복구 버튼과 작업 검색·종료 기록</li><li>Mac 설정에서 마지막으로 사용한 탭 복원과 하위 설정의 돌아가기 개선</li></ul><p>베타 제한: 운영용 iCloud 설정 배포가 남아 있어 기기 간 설정 동기화와 iPhone 구독의 Mac 활성화는 아직 사용할 수 없습니다.</p>]]></description>
+            <enclosure url="https://github.com/saankim/myapps-releases/releases/download/gpu-usage-v2.2.1/GPUUsage-Mac-2.2.1-50.zip" length="5647262" type="application/octet-stream" sparkle:edSignature="vmqUWtNdn/LYTdTU0w8yP5Pi5kr48EnMnzcFg/uX/iXkeQb+82inuR5gMNc6IHsZB4hQBRffwN/c6OAKLQS6CQ=="/>
         </item>
         <item>
             <title>2.2.0</title>
