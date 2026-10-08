@@ -4,7 +4,7 @@ Your GPUs, everywhere. A small utility for researchers and developers, with nati
 
 **Beta limitation:** Production iCloud setup is pending. Cross-device settings sync and iPhone-to-Mac Pro activation do not work yet. Manual server registration and viewing work independently on each device.
 
-[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.1.0) · [Privacy](PRIVACY.md)
+[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.1.1) · [Privacy](PRIVACY.md)
 
 ## Install
 
@@ -42,7 +42,9 @@ On macOS the process picker lists the connected user's processes. It cannot iden
 
 ## Monitor
 
-The dashboard separates compute usage and VRAM, with recent history and clear stale-data states. A GPU is available when both values are below your thresholds (default: compute 10%, VRAM 20%). Unreachable servers remain visible and can be disabled.
+The dashboard uses the original compact rows, small usage bars and recent-history charts, with clear stale-data states. A GPU is available when both values are below your thresholds (default: compute 10%, VRAM 20%). Unreachable servers remain visible and can be disabled.
+
+Use the server filter at the top of the dashboard (or in Settings) to choose which servers appear. The GPU count, Mac menu-bar summary and VS Code view follow that selection; the Watch follows the iPhone selection. Hidden servers continue to be queried and can still generate notifications. Select **Show all servers** to include newly discovered servers automatically. CLI host arguments remain independent of the display filter. Selection is saved locally; cross-device sync has the beta limitation above.
 
 The awake Mac polls at your chosen interval while its menu-bar app runs. iPhone and iPad poll while visible; background refresh happens only when the operating system permits it. Apple Watch displays the latest phone snapshot and marks old results for rechecking. Background timing and notifications are not guaranteed. Job completion means the selected process disappeared, not that it succeeded.
 
