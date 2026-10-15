@@ -3,6 +3,17 @@
     <channel>
         <title>GPU Usage</title>
         <item>
+            <title>2.3.0</title>
+            <pubDate>Thu, 15 Oct 2026 18:04:16 +0900</pubDate>
+            <link>https://github.com/saankim/myapps-releases/blob/main/gpu-usage/README.md</link>
+            <sparkle:version>51</sparkle:version>
+            <sparkle:shortVersionString>2.3.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>GPU Usage 2.3.0</h2><ul><li>GPU 비교에 바로 들어가는 간결한 목록과 시스템 기본 화면</li><li>서버 상세에 모은 사용량 추이와 작업 감시</li><li>Mac 대시보드에서 작업 감시로 바로 이동</li><li>조회 시각, 이전 결과, 확인할 수 없는 작업 상태를 명확히 구분</li><li>큰 글자와 좁은 화면에서 읽기 편한 배치</li><li>높은 사용률의 불필요한 경고색과 반복된 요약 제거</li></ul><p>여유는 설정한 부하 기준을 충족한다는 뜻이며 GPU 예약이 아닙니다. 프로세스 종료 확인은 작업의 성공을 뜻하지 않습니다.</p><p>베타 제한: 기기 간 설정 동기화와 iPhone 구독의 Mac 활성화는 아직 사용할 수 없습니다.</p>]]></description>
+            <enclosure url="https://github.com/saankim/myapps-releases/releases/download/gpu-usage-v2.3.0/GPUUsage-Mac-2.3.0-51.zip" length="3508907" type="application/octet-stream" sparkle:edSignature="/TvP3twBvhZ0BoKctlSFUgdWI8K/B/Iv7pXSP/4/ur0twl3/WDZ3B3QFtVOgh/qv2bcctkxl9VspA2f9C/81BA=="/>
+        </item>
+        <item>
             <title>2.2.1</title>
             <pubDate>Fri, 09 Oct 2026 06:25:06 +0900</pubDate>
             <link>https://github.com/saankim/myapps-releases/blob/main/gpu-usage/README.md</link>

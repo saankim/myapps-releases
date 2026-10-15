@@ -1,10 +1,10 @@
 # GPU Usage
 
-Your GPUs, everywhere. A small utility for researchers and developers, with native Mac, iPhone and iPad apps, an Apple Watch companion, a VS Code dashboard, and an agent-friendly CLI.
+Check GPU load and keep an eye on a running process without repeatedly opening an SSH terminal. GPU Usage is a small utility for individual researchers and developers using a few directly accessible servers.
 
 **Beta limitation:** Production iCloud setup is pending. Cross-device settings sync and iPhone-to-Mac Pro activation do not work yet. Manual server registration and viewing work independently on each device.
 
-[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.2.1) · [Privacy](PRIVACY.md)
+[Download the current beta](https://github.com/saankim/myapps-releases/releases/tag/gpu-usage-v2.3.0) · [Privacy](PRIVACY.md)
 
 ## Install
 
@@ -34,7 +34,7 @@ Open Settings → **Server Management (서버 관리)** → **Add Server (서버
 
 The first server key is remembered automatically, so the initial connection has no fingerprint confirmation step. If the key changes later, monitoring stops and the app shows a fingerprint warning. Confirm the replacement using the existing server trust dialog to reconnect. Existing trusted keys are preserved. SSH remains encrypted and requires user authentication; the app does not modify your SSH configuration or known-hosts files. Automatic first-use trust cannot detect an impersonated server on that very first connection.
 
-Settings sync uses the same iCloud account and iCloud Keychain. There is no QR setup, required Mac setup step on iPhone, remote helper, or push relay. Current beta deployment limitations are listed in the release notes.
+There is no QR setup, required Mac setup step on iPhone, remote helper, or push relay. The cross-device sync implementation uses iCloud and iCloud Keychain, but production activation is still pending; register each device separately in this beta.
 
 ## Apple GPU and MPS
 
@@ -46,17 +46,19 @@ On macOS the process picker lists the connected user's processes. It cannot iden
 
 ## Monitor
 
-The dashboard uses the original compact rows, small usage bars and recent-history charts, with clear stale-data states. A GPU is available when both values are below your thresholds (default: compute 10%, VRAM 20%). Unreachable servers remain visible and can be disabled.
+The dashboard opens directly to compact GPU rows with small usage bars. On iPhone/iPad, select a server for readings, recent history and watched processes. On Mac, expand “최근 30분” for history or use the footer’s “작업 감시” button. Registered watches appear as short summaries; empty watch and history sections stay out of the way.
+
+“여유” (low load) means both values are below your thresholds (default: compute 10%, memory 20%). It is not a reservation or permission to use a GPU. Failed or expired readings remain visibly marked as previous observations and are excluded from current low-load counts. High utilization alone is not shown as an error.
 
 Use the server filter at the top of the dashboard (or in Settings) to choose which servers appear. The GPU count, Mac menu-bar summary and VS Code view follow that selection; the Watch follows the iPhone selection. Hidden servers continue to be queried and can still generate notifications. Select **Show all servers** to include newly discovered servers automatically. CLI host arguments remain independent of the display filter. Selection is saved locally; cross-device sync has the beta limitation above.
 
 The awake Mac polls at your chosen interval while its menu-bar app runs. iPhone and iPad poll while visible; background refresh happens only when the operating system permits it. Apple Watch displays the latest phone snapshot and marks old results for rechecking. Background timing and notifications are not guaranteed. Job completion means the selected process disappeared, not that it succeeded.
 
-In Settings → **Available GPU Alerts (빈 GPU 알림)**, turn alerts on to reveal their conditions. Availability alerts wait for repeated successful readings over a configurable duration (30 seconds by default). A failed query or a long observation gap restarts that duration. After an alert, another alert requires a busy-to-available transition and the configured cooldown (10 minutes by default). **Notify once** turns availability alerts off after the next notification is scheduled; enabling them again starts a fresh observation period.
+In Settings → **GPU Low-load Alerts (GPU 여유 알림)**, turn alerts on to reveal their conditions. Availability alerts wait for repeated successful readings over a configurable duration (30 seconds by default). A failed query or a long observation gap restarts that duration. After an alert, another alert requires a busy-to-available transition and the configured cooldown (10 minutes by default). **Notify once** turns availability alerts off after the next notification is scheduled; enabling them again starts a fresh observation period.
 
 Expand **Add from Running Tasks (실행 중인 작업에서 추가)** beside the server to find a process by name or PID. Give watched processes a recognizable name, such as an experiment name. Use the task’s More menu to rename or stop watching it; the five most recent history entries stay visible, with older entries expandable. The latest 100 process-end detections remain in job history after a watch is removed. Timestamps show when disappearance was observed, not the exact exit time or a successful result.
 
-Star servers to show them first, using the star in the iPhone/iPad server detail or the server’s More menu in **Server Management (서버 관리)**. Choose **Representative Connection (대표 연결 선택)** in that menu to group connections. A single selection sheet shows matching suggestions; changes apply when you save. Grouping changes presentation and avoids duplicate availability alerts; it preserves the original connections and process watches. Separate them again at any time. The VS Code dashboard uses the same ordering and groups.
+Star servers to show them first, using the More menu in iPhone/iPad server details or the server’s More menu in **Server Management (서버 관리)**. Choose **Representative Connection (대표 연결 선택)** in that menu to group connections. A single selection sheet shows matching suggestions; changes apply when you save. Grouping changes presentation and avoids duplicate availability alerts; it preserves the original connections and process watches. Separate them again at any time. The VS Code dashboard uses the same ordering and groups.
 
 Connection failures show a short explanation, retry and server-settings actions, and expandable diagnostic details. Previously collected readings remain visibly stale until a successful refresh.
 
@@ -66,7 +68,7 @@ On iPhone or iPad, add **GPU Usage** from the Home Screen widget gallery after o
 
 Widgets and complications use the latest device snapshot, without making SSH connections themselves. They follow the app's server selection and mark expired readings for rechecking instead of showing them as currently available. Tap to open the app and request fresh data. Widget and complication refresh timing is controlled by the operating system.
 
-Viewing and settings sync are free. Pro adds local GPU-available and process-completion notifications and the CLI, at USD **1.99/month** or **19.99/year**, with Apple-localized storefront pricing. TestFlight purchases use Apple's test environment. Public subscriptions require App Review before sale.
+Viewing is free. Settings sync will also be free when production activation is complete. Pro adds local low-load and watched-process exit notifications and the CLI, at USD **1.99/month** or **19.99/year**, with Apple-localized storefront pricing. TestFlight purchases use Apple's test environment. Public subscriptions require App Review before sale.
 
 ```sh
 gpu-usage --json
